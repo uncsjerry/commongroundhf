@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broward County Affordable Housing Initiative — Framework Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* WHY: Professional research document — think Goldman Sachs or McKinsey, not a website */
+    @page {
+      size: letter;
+      margin: 0.9in 1in 1in 1in;
+      @bottom-center {
+        content: counter(page);
+        font-family: 'Inter', sans-serif;
+        font-size: 8pt;
+        color: #999;
+      }
+    }
+
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #4a4a4a;
+      --muted: #888;
+      --rule: #d0d0d0;
+      --rule-light: #e8e8e8;
+      --accent: #2c5f4a;
+      --accent-light: #e8f0ec;
+      --bg: #fff;
+      --serif: 'Cormorant Garamond', 'Georgia', serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 10pt;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* --- Cover Page --- */
+    .cover {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+      page-break-after: always;
+    }
+
+    .cover-top {
+      padding-top: 2.5in;
+    }
+
+    .cover-rule {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .cover-title {
+      font-family: var(--serif);
+      font-size: 32pt;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .cover-subtitle {
+      font-family: var(--sans);
+      font-size: 12pt;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.5;
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+
+    .cover-meta {
+      font-family: var(--mono);
+      font-size: 7.5pt;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      line-height: 2.2;
+    }
+
+    .cover-bottom {
+      border-top: 1px solid var(--rule);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .cover-disclaimer {
+      font-size: 7.5pt;
+      color: var(--muted);
+      max-width: 380px;
+      line-height: 1.5;
+    }
+
+    .cover-draft {
+      font-family: var(--mono);
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 6px 14px;
+    }
+
+    /* --- Table of Contents --- */
+    .toc {
+      page-break-after: always;
+      padding-top: 48px;
+    }
+
+    .toc h2 {
+      font-family: var(--serif);
+      font-size: 18pt;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--ink);
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px dotted var(--rule-light);
+      font-size: 9.5pt;
+      color: var(--ink-light);
+    }
+
+    .toc-item span:first-child {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .toc-num {
+      font-family: var(--mono);
+      font-size: 8pt;
+      color: var(--muted);
+      margin-right: 12px;
+    }
+
+    .toc-section {
+      font-family: var(--mono);
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      padding: 16px 0 4px;
+      margin-top: 8px;
+      border-bottom: none;
+      font-weight: 600;
+    }
+
+    /* --- Section Styling --- */
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-break {
+      page-break-before: always;
+      padding-top: 0;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 20pt;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 13pt;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    h4 {
+      font-family: var(--sans);
+      font-size: 10pt;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    .lead {
+      font-size: 11pt;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    /* --- Stats Row --- */
+    .stats {
+      display: flex;
+      gap: 0;
+      margin: 20px 0;
+      border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .stat {
+      flex: 1;
+      padding: 14px 16px 14px 0;
+      border-right: 1px solid var(--rule-light);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-val {
+      font-family: var(--serif);
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 7.5pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    /* --- Tables --- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+
+    thead th {
+      font-family: var(--sans);
+      font-size: 7.5pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 2px solid var(--ink);
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--rule-light);
+      color: var(--ink-light);
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    tbody td:first-child {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .num {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 8.5pt;
+      white-space: nowrap;
+    }
+
+    .total td {
+      font-weight: 700;
+      color: var(--ink);
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    /* --- Callout Box --- */
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin: 16px 0;
+      background: var(--accent-light);
+      page-break-inside: avoid;
+    }
+
+    .callout-label {
+      font-family: var(--mono);
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .callout p {
+      font-family: var(--serif);
+      font-size: 10.5pt;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    /* --- Two Column --- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 16px 0;
+    }
+
+    /* --- Timeline --- */
+    .timeline {
+      margin: 16px 0 20px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule-light);
+    }
+
+    .timeline-year {
+      font-family: var(--mono);
+      font-size: 8.5pt;
+      color: var(--accent);
+      font-weight: 500;
+      padding-top: 2px;
+    }
+
+    .timeline-content h4 {
+      margin-top: 0;
+      font-size: 9.5pt;
+    }
+
+    .timeline-content p {
+      font-size: 9pt;
+      margin-bottom: 0;
+    }
+
+    /* --- Capital Stack Bar --- */
+    .stack-bar {
+      display: flex;
+      height: 28px;
+      margin: 12px 0 8px;
+      font-family: var(--mono);
+      font-size: 6.5pt;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .stack-bar div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      white-space: nowrap;
+      padding: 0 8px;
+    }
+
+    /* --- Image --- */
+    .fig {
+      margin: 20px 0;
+      page-break-inside: avoid;
+    }
+
+    .fig img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--rule-light);
+    }
+
+    .fig-caption {
+      font-size: 7.5pt;
+      color: var(--muted);
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    /* --- Source line --- */
+    .source {
+      font-size: 7.5pt;
+      color: var(--muted);
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule-light);
+      line-height: 1.6;
+    }
+
+    /* --- Separator --- */
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 24px 0;
+    }
+
+    /* --- Flow Steps --- */
+    .flow {
+      counter-reset: flow;
+      margin: 12px 0 20px;
+    }
+
+    .flow-item {
+      counter-increment: flow;
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule-light);
+    }
+
+    .flow-item::before {
+      content: counter(flow, decimal-leading-zero);
+      font-family: var(--mono);
+      font-size: 8pt;
+      color: var(--accent);
+      padding-top: 2px;
+    }
+
+    .flow-item h4 { margin-top: 0; font-size: 9.5pt; }
+    .flow-item p { font-size: 9pt; margin-bottom: 0; }
+
+    /* --- Return Cards --- */
+    .return-row {
+      display: flex;
+      gap: 0;
+      margin: 16px 0;
+      border: 2px solid var(--ink);
+    }
+
+    .return-card {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+      border-right: 1px solid var(--rule);
+    }
+
+    .return-card:last-child { border-right: none; }
+
+    .return-val {
+      font-family: var(--serif);
+      font-size: 20pt;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .return-label {
+      font-size: 7pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       COVER PAGE
+       ========================================= -->
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-rule"></div>
+      <h1 class="cover-title">Broward County<br>Affordable Housing<br>Initiative</h1>
+      <p class="cover-subtitle">A public-private framework for workforce and affordable housing development. Layered capital stack. Tax-advantaged returns. Permanent affordability through Community Land Trust structure.</p>
+      <div class="cover-meta">
+        March 2026<br>
+        Broward County, Florida<br>
+        For Discussion Purposes Only<br>
+        commongroundhousingtrust.org
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <p class="cover-disclaimer">This document is prepared for discussion and partner outreach purposes only. All financial projections, tax benefit estimates, and program parameters are preliminary and subject to legal, financial, and feasibility review. This is not a securities offering or investment solicitation. Data sourced from public records: Broward County Property Appraiser, City of Fort Lauderdale CRA, FHFC, HUD, and IRS.</p>
+      <span class="cover-draft">Draft</span>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       TABLE OF CONTENTS
+       ========================================= -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ul class="toc-list">
+      <li class="toc-item toc-section">Foundation</li>
+      <li class="toc-item"><span><span class="toc-num">01</span>Executive Summary</span></li>
+      <li class="toc-item"><span><span class="toc-num">02</span>The Origin &mdash; The Huizenga Legacy</span></li>
+      <li class="toc-item"><span><span class="toc-num">03</span>The Housing Crisis &mdash; Broward by the Numbers</span></li>
+      <li class="toc-item toc-section">The Framework</li>
+      <li class="toc-item"><span><span class="toc-num">04</span>Capital Stack &mdash; The Five Layers</span></li>
+      <li class="toc-item"><span><span class="toc-num">05</span>Investor Value Proposition &mdash; Tax Tools</span></li>
+      <li class="toc-item"><span><span class="toc-num">06</span>Community Land Trust Model</span></li>
+      <li class="toc-item"><span><span class="toc-num">07</span>Target Geography &mdash; 18 OZ Tracts</span></li>
+      <li class="toc-item"><span><span class="toc-num">08</span>Government Partnership Strategy</span></li>
+      <li class="toc-item"><span><span class="toc-num">09</span>The Banking Layer &mdash; Circle of Life</span></li>
+      <li class="toc-item toc-section">Proof &amp; Pipeline</li>
+      <li class="toc-item"><span><span class="toc-num">10</span>Proof of Concept &mdash; Seven on Seventh &amp; Aspire 1650</span></li>
+      <li class="toc-item"><span><span class="toc-num">11</span>Deal Model I &mdash; Aspire 1650 (90 Units, FHFC-Filed)</span></li>
+      <li class="toc-item"><span><span class="toc-num">12</span>Deal Model II &mdash; USPS-Alridge Station (320 Units)</span></li>
+      <li class="toc-item"><span><span class="toc-num">13</span>Investor Return Summary</span></li>
+      <li class="toc-item toc-section">Market Context</li>
+      <li class="toc-item"><span><span class="toc-num">14</span>Landscape Analysis &mdash; 11 Organizations Compared</span></li>
+      <li class="toc-item"><span><span class="toc-num">15</span>What Makes This Different</span></li>
+      <li class="toc-item"><span><span class="toc-num">16</span>Pipeline &amp; Market Context</span></li>
+      <li class="toc-item toc-section">Appendix</li>
+      <li class="toc-item"><span><span class="toc-num">17</span>Open Questions &amp; Next Steps</span></li>
+      <li class="toc-item"><span><span class="toc-num">18</span>Target Banking Partners</span></li>
+    </ul>
+  </div>
+
+
+  <!-- =========================================
+       01 — EXECUTIVE SUMMARY
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">01 &mdash; Executive Summary</span>
+    <h2>The Opportunity Is Structural</h2>
+    <p class="lead">Broward County faces one of the most acute housing affordability crises in the United States. A convergence of expiring CRA districts, incoming Opportunity Zone 2.0 designations, and $85M+ in redirected TIF funding creates a rare window for a transformative public-private housing program.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-val">93%</div>
+        <div class="stat-label">Cannot Afford Median Home</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">62%</div>
+        <div class="stat-label">Renter Households Cost-Burdened</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">+67%</div>
+        <div class="stat-label">Median Home Price Since 2020</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">$2,500</div>
+        <div class="stat-label">Average Monthly Market Rent</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">The Gap</span>
+      <p>An affordable rent threshold for low-to-moderate income households is $919 per month &mdash; a gap of $1,584 every month against market rates. This is not just a social issue. It is an economic competitiveness crisis. The Greater Fort Lauderdale Chamber of Commerce has noted that Broward is engaged in "an all-out war for talent" that it risks losing if workforce housing is not addressed.</p>
+    </div>
+
+    <p>This document proposes a multi-layered housing development framework that enables ultra-high-net-worth family offices to invest in affordable housing as a long-term generational asset, pairs private capital with federal, state, county, and city tax incentives, uses a Community Land Trust model to permanently preserve affordability, and is modeled on the proven success of BPHI's completed developments in this market.</p>
+  </div>
+
+
+  <!-- =========================================
+       02 — THE ORIGIN
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">02 &mdash; The Origin</span>
+    <h2>The Huizenga Legacy</h2>
+
+    <p class="lead">In the early 1990s, Fort Lauderdale's downtown had a problem the city couldn't solve by force. A tent city &mdash; at its peak, 400 people crammed under tarps in a half-acre parking lot across from City Hall &mdash; had become a fixture of the financial district.</p>
+
+    <p>The city had tried bum sweeps, garbage can bans, and forced clearing. None of it worked. At a time when over 5,000 individuals were homeless in Broward County and fewer than 350 shelter beds existed, <strong>H. Wayne Huizenga</strong> &mdash; the only person in American history to build three Fortune 500 companies &mdash; challenged the financial district's business leaders to invest in a real solution. Not a study. Not a committee. A building.</p>
+
+    <div class="two-col">
+      <div>
+        <h4>H. Wayne Huizenga (1937&ndash;2018)</h4>
+        <p>Founded Waste Management, Blockbuster Video, and AutoNation. First person to own teams in three major professional sports leagues simultaneously (Dolphins, Marlins, Panthers). 1997 World Series champion. Man of the Centennial, Fort Lauderdale (2010). Wayne and wife Marti donated over $100 million to South Florida institutions. The Huizenga Family Foundation (est. 1987) continues to fund community organizations across Broward County.</p>
+      </div>
+      <div>
+        <h4>Huizenga Campus &mdash; By the Numbers</h4>
+        <table>
+          <tbody>
+            <tr><td>Facility</td><td class="num">57,000 SF on 3 acres</td></tr>
+            <tr><td>Emergency beds</td><td class="num">498</td></tr>
+            <tr><td>Individuals &amp; families served</td><td class="num">32,000+</td></tr>
+            <tr><td>Meals served annually</td><td class="num">1.2 million</td></tr>
+            <tr><td>Permanent housing units</td><td class="num">83 (scattered-site)</td></tr>
+            <tr><td>People served nightly</td><td class="num">~750</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>Timeline</h3>
+    <div class="timeline">
+      <div class="timeline-item"><span class="timeline-year">1993</span><div class="timeline-content"><h4>Tent City &amp; The County Plan</h4><p>Broward County Commissioners adopt the Homeless Initiative Plan. Over 5,000 homeless, fewer than 350 beds.</p></div></div>
+      <div class="timeline-item"><span class="timeline-year">1997</span><div class="timeline-content"><h4>BPHI Incorporated</h4><p>Broward Partnership for the Homeless formed as a private/public alliance. Huizenga's challenge becomes an organization.</p></div></div>
+      <div class="timeline-item"><span class="timeline-year">1999</span><div class="timeline-content"><h4>Doors Open</h4><p>February 1: Huizenga Campus receives first clients. February 12: Tent city closes. Frances Esposito leads operations for 25 years.</p></div></div>
+      <div class="timeline-item"><span class="timeline-year">2023</span><div class="timeline-content"><h4>Seven on Seventh</h4><p>BPHI completes first affordable housing development &mdash; 72 units of mixed-use housing. From shelter operator to housing developer.</p></div></div>
+      <div class="timeline-item"><span class="timeline-year">2026</span><div class="timeline-content"><h4>The Next Chapter</h4><p>Aspire 1650 (90 units) in FHFC pipeline. USPS-Alridge Station (320 units) in active negotiation. A capital framework for generational investment.</p></div></div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Why Legacy Matters</span>
+      <p>Wayne Huizenga didn't just write a check. He challenged an industry to invest in a solution alongside government. This framework extends that legacy to UHNW family offices: not charity, but architecture. A capital structure where the land appreciates on your family's balance sheet for generations while permanently housing the workforce that makes your community function. A namesake that does good in perpetuity.</p>
+    </div>
+
+    <p class="source">Sources: Sun-Sentinel (2014, 2018, 2024), BPHI.org, Leo Goodwin Foundation, Broward County Commission records (December 1993), CNBC, ESPN, Nova Southeastern University, Automotive Hall of Fame.</p>
+  </div>
+
+
+  <!-- =========================================
+       03 — HOUSING CRISIS
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">03 &mdash; The Housing Crisis</span>
+    <h2>Broward by the Numbers</h2>
+    <p class="lead">The scale of Broward's housing gap demands immediate, coordinated action across every level of government and the private sector.</p>
+
+    <table>
+      <thead><tr><th>Metric</th><th>Data Point</th><th>Implication</th></tr></thead>
+      <tbody>
+        <tr><td>Median home price increase since 2020</td><td class="num">+67%</td><td>Homeownership out of reach for most</td></tr>
+        <tr><td>Average market rent</td><td class="num">$2,500/mo</td><td>Far exceeds workforce budgets</td></tr>
+        <tr><td>Affordable rent threshold (LMI)</td><td class="num">$919/mo</td><td>$1,584/month gap per household</td></tr>
+        <tr><td>Cost-burdened renter households</td><td class="num">~62%</td><td>Majority spending 30%+ on rent</td></tr>
+        <tr><td>Residents who cannot afford median home</td><td class="num">93%</td><td>Near-universal workforce housing need</td></tr>
+        <tr><td>Tourism / hospitality workforce</td><td class="num">Significant</td><td>Sector most impacted by housing gap</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- =========================================
+       04 — CAPITAL STACK
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">04 &mdash; The Program Framework</span>
+    <h2>The Capital Stack &mdash; Five Layers</h2>
+    <p class="lead">An integrated capital stack where multiple funding sources layer on top of each other, maximizing both the scale of housing produced and the financial return for private investors.</p>
+
+    <table>
+      <thead><tr><th>Layer</th><th>Source</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td>1 &mdash; Private Capital</td><td>UHNW Family Offices / QOF Investors</td><td>Acquire land; hold as long-term generational asset</td></tr>
+        <tr><td>2 &mdash; Federal Incentives</td><td>LIHTC, OZ/QOF, NMTC, HUD, HOME</td><td>Tax credits &amp; grants offset development cost</td></tr>
+        <tr><td>3 &mdash; State Programs</td><td>SAIL, SHIP (Florida)</td><td>Subordinate loans &amp; gap financing</td></tr>
+        <tr><td>4 &mdash; County / City</td><td>TIF Trust Fund, Impact Fee Waivers, Land</td><td>Public land + $85M+ in redirected CRA funds</td></tr>
+        <tr><td>5 &mdash; CLT Structure</td><td>Community Land Trust Entity</td><td>Land held permanently; units sold/rented separately</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- =========================================
+       05 — INVESTOR TAX TOOLS
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">05 &mdash; Investor Value Proposition</span>
+    <h2>Tax-Advantaged Generational Asset</h2>
+    <p class="lead">For ultra-high-net-worth investors and family offices, this program is structured as a long-term tax-advantaged asset &mdash; not a short-term yield play.</p>
+
+    <table>
+      <thead><tr><th>Tax Tool</th><th>Benefit</th><th>Horizon</th></tr></thead>
+      <tbody>
+        <tr><td>Qualified Opportunity Fund (QOF)</td><td>Defer &amp; eliminate capital gains tax on appreciation</td><td class="num">10+ years</td></tr>
+        <tr><td>Low-Income Housing Tax Credit (LIHTC)</td><td>Dollar-for-dollar federal tax credit over 10 years</td><td class="num">10 years</td></tr>
+        <tr><td>New Markets Tax Credit (NMTC)</td><td>39% credit on qualified equity investment</td><td class="num">7 years</td></tr>
+        <tr><td>1031 Exchange into Fund</td><td>Roll property sale proceeds, defer capital gains</td><td class="num">Ongoing</td></tr>
+        <tr><td>Family Limited Partnership (FLP)</td><td>Generational asset transfer with valuation discounts</td><td class="num">Multi-gen</td></tr>
+        <tr><td>Charitable Lead/Remainder Trust</td><td>Deduction now; asset passes to heirs later</td><td class="num">Estate</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">Key Insight</span>
+      <p>The land itself &mdash; held by the family office entity or CLT &mdash; appreciates over time as a balance sheet asset, independent of the affordable housing restriction on the units. This is the generational wealth mechanism.</p>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       06 — CLT MODEL
+       ========================================= -->
+  <div class="section">
+    <span class="section-num">06 &mdash; Ownership Model</span>
+    <h2>Community Land Trust</h2>
+
+    <div class="two-col">
+      <div>
+        <h4>Land Ownership &mdash; Investor / CLT</h4>
+        <p>The CLT or family office-controlled entity owns the land in perpetuity. The land never re-enters the speculative market. The family office retains a long-term appreciating land asset on the family balance sheet. A third-party property management company maintains all units.</p>
+      </div>
+      <div>
+        <h4>Unit Ownership &mdash; Residents</h4>
+        <p>Residents own their individual units (condominiums or homes). When a unit is sold, appreciation is shared between seller and CLT &mdash; keeping the unit affordable for the next buyer while giving residents meaningful equity.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       07 — GEOGRAPHY
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">07 &mdash; Target Geography</span>
+    <h2>18 Opportunity Zone Tracts in Broward</h2>
+
+    <table>
+      <thead><tr><th>Municipality</th><th class="num">OZ Tracts</th><th>CRA / Strategic Status</th></tr></thead>
+      <tbody>
+        <tr><td>Fort Lauderdale</td><td class="num">7</td><td>Active CRA (NW-Progresso-Flagler + Central City) &mdash; highest OZ density</td></tr>
+        <tr><td>Lauderdale Lakes</td><td class="num">4</td><td>High OZ density; workforce/LMI population; phasing CRA</td></tr>
+        <tr><td>Hallandale Beach</td><td class="num">2</td><td>Active CRA; Miami border growth corridor</td></tr>
+        <tr><td>Hollywood</td><td class="num">1</td><td>Active Beach + Downtown CRA; tourism/hospitality hub</td></tr>
+        <tr><td>Lauderhill</td><td class="num">2</td><td>Affordable land availability; strong community need</td></tr>
+        <tr><td>Dania Beach</td><td class="num">1</td><td>Airport corridor; strong workforce housing demand</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">OZ 2.0 &mdash; Critical Timing</span>
+      <p>The current OZ 1.0 program expires at end of 2028. A new OZ 2.0 designation round opens July 1, 2026, with new tracts taking effect January 1, 2027. Partners already engaged with Broward County officials can advocate for OZ 2.0 nomination of target parcels. Florida has 1,360 census tracts eligible for OZ 2.0.</p>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       08 — GOVERNMENT PARTNERSHIP
+       ========================================= -->
+  <div class="section">
+    <span class="section-num">08 &mdash; Government Partnership Strategy</span>
+    <h2>Four Tiers of Public Capital</h2>
+
+    <div class="two-col">
+      <div>
+        <h4>Federal</h4>
+        <p>LIHTC (dollar-for-dollar credit, 10 years), QOF/OZ (capital gains deferral), NMTC (mixed-use), HUD HOME (gap financing), CDBG (infrastructure).</p>
+        <h4>State of Florida</h4>
+        <p>SAIL (subordinate loans for multifamily), SHIP (homeownership/rental assistance), FHFC (administers LIHTC statewide).</p>
+      </div>
+      <div>
+        <h4>Broward County</h4>
+        <p>Affordable Housing Trust Fund ($85M+ from expiring CRA TIF through FY2032). $127.4M total CRA incentives awarded; 80% of in-progress allocation ($45.9M) directed to mixed-use affordable housing. Impact fee waivers, density bonuses (1:25 ratio at 30% AMI), parking reduced to zero for units at/below 60% AMI near transit.</p>
+        <h4>Municipal (City-by-City)</h4>
+        <p>Surplus land under FL Statute 166.0451, zoning density bonuses, expedited permitting, direct land transfer or ground lease.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       09 — BANKING LAYER
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">09 &mdash; The Banking Layer</span>
+    <h2>The Circle of Life &mdash; Perpetual Reinvestment</h2>
+    <p class="lead">Private banking relationships become the engine that makes the entire capital stack self-sustaining &mdash; not a one-time transaction, but a perpetual reinvestment cycle.</p>
+
+    <div class="flow">
+      <div class="flow-item"><div><h4>Leverage Private Banking Relationship</h4><p>UHNW family office engages existing relationship with JPMorgan, Goldman, Citi, Wells, or BofA Private Bank.</p></div></div>
+      <div class="flow-item"><div><h4>Bank Provides Acquisition + Construction Loan</h4><p>Secured against CLT land asset. Low LTV risk. CRA-motivated, below-market rate.</p></div></div>
+      <div class="flow-item"><div><h4>LIHTC Equity Bridge Loan</h4><p>Bank advances credit investor equity before final pay-in, filling the construction gap.</p></div></div>
+      <div class="flow-item"><div><h4>Federal + State Incentives Layered In</h4><p>LIHTC, OZ, HOME, SAIL reduce effective cost of capital to near zero.</p></div></div>
+      <div class="flow-item"><div><h4>Development Completes &mdash; Income Begins</h4><p>Units rented or sold. Rental income and condo proceeds service debt.</p></div></div>
+      <div class="flow-item"><div><h4>Permanent HUD 221(d)(4) Replaces Construction Debt</h4><p>Non-recourse, 40-year FHA-insured mortgage locks in low fixed rate.</p></div></div>
+      <div class="flow-item"><div><h4>Land Asset Appreciates</h4><p>CLT land grows in value independent of unit affordability restrictions.</p></div></div>
+      <div class="flow-item"><div><h4>Family Office Refinances &mdash; Pulls Equity</h4><p>Cash-out refi at higher valuation frees capital for redeployment.</p></div></div>
+      <div class="flow-item"><div><h4>Equity Redeployed into Next Deal</h4><p>New OZ tract, new parcel, new development. The cycle restarts permanently.</p></div></div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">CRA Mandate</span>
+      <p>Under the Community Reinvestment Act, every major bank is graded on how well it deploys capital in LMI communities. A poor grade can block mergers, acquisitions, and expansion. Banks need your deal as much as you need their capital. CRA-motivated loans come at below-market rates.</p>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       10 — PROOF OF CONCEPT
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">10 &mdash; Proof of Concept</span>
+    <h2>Seven on Seventh &amp; Aspire 1650</h2>
+
+    <div class="fig">
+      <img src="assets/seven-on-seventh.jpg" alt="Seven on Seventh">
+      <p class="fig-caption">Seven on Seventh &mdash; 72 units &mdash; Adjacent to Huizenga Campus &mdash; Completed 2023 &mdash; Image: bphi.org</p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h4>Seven on Seventh &mdash; Completed</h4>
+        <p>77-unit mixed-use affordable housing in the NW-Progresso CRA. 95%+ stabilized occupancy achieved. Construction financing fully repaid. CRA partnership executed. Workforce training hub operational. Demonstrates the model works in this exact market.</p>
+      </div>
+      <div>
+        <h4>Aspire 1650 &mdash; In Pipeline</h4>
+        <p>BPHI's second development in Pompano Beach. In the FHFC pipeline under RFA 2025-103 (Housing Credit and SAIL Financing to Develop Housing for Homeless Persons). 90 units Phase 1 of 160 total. Construction targeted 2026&ndash;2027. Architect: Gallo Herbert Architects.</p>
+      </div>
+    </div>
+
+    <div class="fig">
+      <img src="assets/aspire-1650.png" alt="Aspire 1650">
+      <p class="fig-caption">Aspire 1650 &mdash; 160 units (Phase 1: 90) &mdash; NW 31st Ave &amp; Blount Rd, Pompano Beach &mdash; Gallo Herbert Architects &mdash; May 2025</p>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       11 — DEAL MODEL I
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">11 &mdash; Deal Model I</span>
+    <h2>Aspire 1650 &mdash; 90 Units, Pompano Beach</h2>
+    <p class="lead">A real development with approved FHFC financing, an active invitation to bid (due April 2, 2026), and construction targeted for Q3 2026. This is not hypothetical &mdash; it is the next project in the pipeline. All figures from the filed FHFC RFA 2025-103 application.</p>
+
+    <div class="two-col">
+      <div>
+        <h4>Project Overview</h4>
+        <table>
+          <tbody>
+            <tr><td>Location</td><td>NW 31st Ave &amp; Blount Rd, Pompano Beach, FL</td></tr>
+            <tr><td>Units</td><td class="num">90 (Phase 1 of 160 total)</td></tr>
+            <tr><td>Unit Mix</td><td>19 Studio &middot; 61 1BR/1BA &middot; 10 2BR/2BA</td></tr>
+            <tr><td>Building</td><td>8-story high-rise, single building</td></tr>
+            <tr><td>GSF</td><td class="num">83,712 SF</td></tr>
+            <tr><td>Parking</td><td class="num">160 surface spaces</td></tr>
+            <tr><td>Construction Type</td><td>High-rise, new construction</td></tr>
+            <tr><td>Architect</td><td>Gallo Herbert Architects (GHA)</td></tr>
+            <tr><td>Development Partner</td><td>Green Mills Group</td></tr>
+            <tr><td>FHFC Application</td><td>RFA 2025-103 (#2025-362CSA)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h4>Timeline</h4>
+        <table>
+          <tbody>
+            <tr><td>FHFC Application Filed</td><td class="num">January 21, 2025</td></tr>
+            <tr><td>FHFC Board Approval</td><td class="num">March 28, 2025</td></tr>
+            <tr><td>GC Bids Due</td><td class="num">April 2, 2026</td></tr>
+            <tr><td>Financial Closing / Groundbreaking</td><td class="num">Q3 2026</td></tr>
+            <tr><td>50% Construction</td><td class="num">Q2 2027</td></tr>
+            <tr><td>Certificate of Occupancy</td><td class="num">Q4 2027</td></tr>
+            <tr><td>100% Leased</td><td class="num">Q1 2028</td></tr>
+            <tr><td>Stabilized Operations</td><td class="num">Q3 2028</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="fig">
+      <img src="assets/aspire-1650.png" alt="Aspire 1650 Architectural Renders">
+      <p class="fig-caption">Aspire 1650 &mdash; 160 units (Phase 1: 90) &mdash; Gallo Herbert Architects &mdash; Schematic Design May 2025</p>
+    </div>
+
+    <h3>Development Budget &mdash; FHFC Application</h3>
+    <table>
+      <thead><tr><th>Line Item</th><th class="num">Cost</th><th class="num">% of TDC</th><th class="num">Per Unit</th></tr></thead>
+      <tbody>
+        <tr><td>Land (TBD)</td><td class="num">$2,500,000</td><td class="num">6%</td><td class="num">$27,778</td></tr>
+        <tr><td>Hard Cost Construction</td><td class="num">$23,857,920</td><td class="num">60%</td><td class="num">$265,088</td></tr>
+        <tr><td>Rec / Owner / Green / FF&amp;E</td><td class="num">$483,900</td><td class="num">1%</td><td class="num">$5,377</td></tr>
+        <tr><td>Hard Cost Contingency</td><td class="num">$1,192,896</td><td class="num">3%</td><td class="num">$13,254</td></tr>
+        <tr><td>Developer Fee</td><td class="num">$4,929,064</td><td class="num">12%</td><td class="num">$54,767</td></tr>
+        <tr><td>Construction Interest</td><td class="num">$1,494,000</td><td class="num">4%</td><td class="num">$16,600</td></tr>
+        <tr><td>Financing Fees / FHFC Fees</td><td class="num">$850,447</td><td class="num">2%</td><td class="num">$9,449</td></tr>
+        <tr><td>Operating Reserve (5% TDC)</td><td class="num">$1,549,333</td><td class="num">4%</td><td class="num">$17,215</td></tr>
+        <tr><td>Soft Costs</td><td class="num">$3,107,490</td><td class="num">8%</td><td class="num">$34,528</td></tr>
+        <tr class="total"><td>Total Project Costs</td><td class="num">$39,965,050</td><td class="num">100%</td><td class="num">$444,056</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Capital Stack &mdash; Sources</h3>
+    <div class="stack-bar">
+      <div style="flex: 70; background: #2c5f4a;">LIHTC Equity $28.0M &middot; 70%</div>
+      <div style="flex: 14; background: #4a7a6b;">SAIL $5.6M &middot; 14%</div>
+      <div style="flex: 5; background: #666;">Deferred Dev Fee 5%</div>
+      <div style="flex: 4; background: #888;">Land 4%</div>
+      <div style="flex: 7; background: #c4a265; color: #1a1a1a;">Other 7%</div>
+    </div>
+
+    <table>
+      <thead><tr><th>Source</th><th class="num">Amount</th><th class="num">% of TDC</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>LIHTC Limited Partner Equity</td><td class="num">$28,047,195</td><td class="num">70%</td><td>9% housing credits; largest single source</td></tr>
+        <tr><td>FHFC SAIL</td><td class="num">$5,570,900</td><td class="num">14%</td><td>State Apartment Incentive Loan</td></tr>
+        <tr><td>Deferred Developer Fee</td><td class="num">$2,017,855</td><td class="num">5%</td><td>Developer fee deferred to close gap</td></tr>
+        <tr><td>Deferred Land</td><td class="num">$1,500,000</td><td class="num">4%</td><td>Land value contributed / deferred</td></tr>
+        <tr><td>NTHF / HOME</td><td class="num">$1,150,000</td><td class="num">3%</td><td>National Housing Trust Fund / HOME program</td></tr>
+        <tr><td>BPHI Reloan (McCormick)</td><td class="num">$850,000</td><td class="num">2%</td><td>Internal BPHI subordinate loan</td></tr>
+        <tr><td>FHFC ELI</td><td class="num">$529,100</td><td class="num">1%</td><td>Extremely Low Income supplemental</td></tr>
+        <tr><td>Broward County</td><td class="num">$300,000</td><td class="num">1%</td><td>County contribution</td></tr>
+        <tr class="total"><td>Total Project Financing</td><td class="num">$39,965,050</td><td class="num">100%</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div>
+        <h4>Construction Financing</h4>
+        <table>
+          <tbody>
+            <tr><td>Construction Loan</td><td class="num">$18,000,000</td></tr>
+            <tr><td>LIHTC Equity During Construction</td><td class="num">$14,023,598</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h4>Key Metrics</h4>
+        <table>
+          <tbody>
+            <tr><td>Cost Per Unit</td><td class="num">$444,056</td></tr>
+            <tr><td>Cost Per Net SF</td><td class="num">$764</td></tr>
+            <tr><td>LIHTC as % of TDC</td><td class="num">70%</td></tr>
+            <tr><td>GC Bids Outstanding</td><td class="num">4 (due 4/2/26)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Note</span>
+      <p>The pro forma will be revisited once final construction bids are received (due April 2, 2026) and equity investor commitments are secured. Numbers above reflect the filed FHFC application. Broward County has agreed to construct off-site drainage improvements and site elevation work on the adjacent county-owned parcel at county expense.</p>
+    </div>
+
+    <p class="source">Source: FHFC RFA 2025-103 Application (#2025-362CSA), filed January 21, 2025. Pro forma page 1 from BPHI/Green Mills Group submission. Unit mix updated per March 9, 2026 Fact Sheet (8 studio, 68 1BR, 14 2BR). Construction timeline per March 2026 update. GC bids solicited February 26, 2026 to Gomez Construction, Lemark Construction, Pirtle, and Royal American Management.</p>
+  </div>
+
+
+  <!-- =========================================
+       12 — DEAL MODEL II
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">12 &mdash; Deal Model II</span>
+    <h2>USPS-Alridge Station &mdash; The Real Deal (320 Units)</h2>
+    <p class="lead">A 320-unit mixed-use development on the 3.02-acre USPS Post Office site at 400 NW 7th Avenue. Pre-design complete. Term sheet in negotiation. This is not hypothetical.</p>
+
+    <div class="fig">
+      <img src="assets/glavovic-option-1.png" alt="Glavovic Studio Pre-Design">
+      <p class="fig-caption">Glavovic Studio &mdash; Option I (Central Garage) &mdash; 320 units, 332 parking, 500,448 GSF &mdash; Pre-Design February 4, 2026</p>
+    </div>
+
+    <h3>Site Details</h3>
+    <table>
+      <thead><tr><th>Parameter</th><th>Detail</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Address</td><td>400 NW 7th Ave, Fort Lauderdale 33311</td><td>CRA Public Record</td></tr>
+        <tr><td>Size</td><td class="num">3.02 acres / 131,679 SF</td><td>CRA Board, Feb 2026</td></tr>
+        <tr><td>Owner</td><td>City of Fort Lauderdale (CDBG-acquired)</td><td>BCPA Folio 504203230010</td></tr>
+        <tr><td>Transfer Path</td><td>City &rarr; CRA &rarr; Broward Partnership</td><td>CRA Public Record</td></tr>
+        <tr><td>Fair Market Value</td><td class="num">$10M+ ($75&ndash;$100/SF)</td><td>CRA Housing Mgr, Feb 2026</td></tr>
+        <tr><td>Acquisition Cost</td><td class="num">$0 (CRA conveyance)</td><td>CRA disposition authority</td></tr>
+        <tr><td>Zoning</td><td>NWRAC-MUE &mdash; Unlimited DU/acre</td><td>City zoning records</td></tr>
+        <tr><td>USPS Lease Expiration</td><td class="num">December 11, 2027</td><td>30-year lease; USPS confirmed not extending</td></tr>
+        <tr><td>Height</td><td class="num">65 ft by right; 110 ft with AH bonus</td><td>CRA memo, Feb 2026; FAA limit 200 ft</td></tr>
+        <tr><td>LLA Tax Exemption</td><td>100% for &lt;80% AMI; 75% for 80&ndash;120%</td><td>Live Local Act (FL SB 102, 2023)</td></tr>
+        <tr><td>CRA Extension</td><td>Through November 7, 2035</td><td>ILA signed May 20, 2025</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Proposed Terms (Per CRA Public Discussion, February 2026)</h3>
+    <p>Minimum 250 multifamily units. At least 50% at or below 60% AMI. May be phased. 10-year reverter for building permits. Developer may transfer to affiliated entity or JV.</p>
+
+    <h3>Development Budget</h3>
+    <table>
+      <thead><tr><th>Line Item</th><th class="num">Cost</th><th class="num">Per Unit</th></tr></thead>
+      <tbody>
+        <tr><td>Land Acquisition</td><td class="num">$0</td><td class="num">$0</td></tr>
+        <tr><td>Hard Costs</td><td class="num">$72,000,000</td><td class="num">$225,000</td></tr>
+        <tr><td>Soft Costs</td><td class="num">$10,800,000</td><td class="num">$33,750</td></tr>
+        <tr><td>Developer Fee</td><td class="num">$7,200,000</td><td class="num">$22,500</td></tr>
+        <tr><td>Financing Costs</td><td class="num">$5,400,000</td><td class="num">$16,875</td></tr>
+        <tr><td>Reserves</td><td class="num">$1,600,000</td><td class="num">$5,000</td></tr>
+        <tr class="total"><td>Total Development Cost</td><td class="num">$97,000,000</td><td class="num">$303,125</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Capital Stack</h3>
+    <div class="stack-bar">
+      <div style="flex: 42; background: #2c5f4a;">LIHTC $40.7M &middot; 42%</div>
+      <div style="flex: 21; background: #4a7a6b;">QOF $20.4M &middot; 21%</div>
+      <div style="flex: 21; background: #666;">FHA $20.4M &middot; 21%</div>
+      <div style="flex: 8; background: #c4a265; color: #1a1a1a;">State 8%</div>
+      <div style="flex: 8; background: #ddd; color: #1a1a1a;">CRA 8%</div>
+    </div>
+
+    <h3>Stabilized Pro Forma &mdash; Year 1</h3>
+    <table>
+      <thead><tr><th>Line Item</th><th class="num">Annual</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Effective Gross Income</td><td class="num">$5,252,544</td><td>60% AMI rents, 7% vacancy, $360K commercial</td></tr>
+        <tr><td>Operating Expenses</td><td class="num">($2,080,000)</td><td>$6,500/unit</td></tr>
+        <tr><td>Net Operating Income</td><td class="num">$3,172,544</td><td></td></tr>
+        <tr><td>Debt Service</td><td class="num">($1,365,360)</td><td>$20.4M FHA 221(d)(4) at 5.25%, 40-yr</td></tr>
+        <tr class="total"><td>Cash Flow After Debt</td><td class="num">$1,807,184</td><td>DSCR: 2.32x</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- =========================================
+       13 — INVESTOR RETURNS
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">13 &mdash; Investor Return Summary</span>
+    <h2>Three Return Streams, One Compounding Asset</h2>
+
+    <div class="return-row">
+      <div class="return-card">
+        <div class="return-val">14&ndash;18%</div>
+        <div class="return-label">Blended After-Tax IRR</div>
+      </div>
+      <div class="return-card">
+        <div class="return-val">8.9%</div>
+        <div class="return-label">Cash-on-Cash Return</div>
+      </div>
+      <div class="return-card">
+        <div class="return-val">$10M+</div>
+        <div class="return-label">Day-One Land Equity</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h4>Stream 1: LIHTC Tax Credits</h4>
+        <p>~$80M face value over 10 years. Investor cost at $0.92/credit. Effective annual yield ~8.6% tax-equivalent.</p>
+        <h4>Stream 2: QOF / Opportunity Zone</h4>
+        <p>$20.4M invested. Capital gains deferred years 1&ndash;10, then tax-free on appreciation. 6% preferred return = $1.2M/year.</p>
+      </div>
+      <div>
+        <h4>Stream 3: Cash Flow + Land Appreciation</h4>
+        <p>$1.8M annual cash flow. Land basis of $10M+ projected to $14&ndash;$16M at Year 10. Generational transfer via FLP at discounted valuation.</p>
+        <h4>Sensitivity</h4>
+        <table>
+          <thead><tr><th>Scenario</th><th class="num">CoC</th><th class="num">IRR</th></tr></thead>
+          <tbody>
+            <tr><td>Base Case</td><td class="num">8.9%</td><td class="num">14&ndash;18%</td></tr>
+            <tr><td>15% Cost Overrun</td><td class="num">7.1%</td><td class="num">10&ndash;12%</td></tr>
+            <tr><td>10% Rent Reduction</td><td class="num">6.9%</td><td class="num">10&ndash;11%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       14 — LANDSCAPE ANALYSIS
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">14 &mdash; Landscape Analysis</span>
+    <h2>Broward Has the Organizations. It Doesn't Have the Units.</h2>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-val">147K</div><div class="stat-label">Unit Deficit</div></div>
+      <div class="stat"><div class="stat-val">955</div><div class="stat-label">Built 2020&ndash;2024</div></div>
+      <div class="stat"><div class="stat-val">8,690</div><div class="stat-label">Miami-Dade Same Period</div></div>
+      <div class="stat"><div class="stat-val">770 yrs</div><div class="stat-label">To Close Gap at Pace</div></div>
+    </div>
+
+    <h3>Government Programs &mdash; Fund, Don't Build</h3>
+    <table>
+      <thead><tr><th>Organization</th><th>Role</th><th>Scale</th></tr></thead>
+      <tbody>
+        <tr><td>County Housing Division</td><td>Gap financing, trust fund</td><td>$154M since 2018 &mdash; 4,301 units funded</td></tr>
+        <tr><td>Housing Trust Fund</td><td>Dedicated funding (2018 referendum)</td><td>$42M approved &mdash; 1,545 units</td></tr>
+        <tr><td>Housing Finance Authority</td><td>Tax-exempt bonds</td><td>$146M &mdash; 552 units</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Nonprofit Developers &mdash; Build Small</h3>
+    <table>
+      <thead><tr><th>Organization</th><th>Scale</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Broward Housing Solutions</td><td>197 units, 19 properties</td><td>Important niche (disabled/mental health). Not workforce scale.</td></tr>
+        <tr><td>Habitat for Humanity</td><td>300+ homes since 1983</td><td>~10 homes/year. Homeownership only.</td></tr>
+        <tr><td>South Florida CLT</td><td>13 units in Broward</td><td>Right model, minimal scale.</td></tr>
+        <tr><td>BPHI (This Framework)</td><td>77 done &rarr; 90 pipeline &rarr; 320 negotiation</td><td>Fastest trajectory. Only CLT + UHNW stack.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="source">Sources: Broward County records, Sun-Sentinel (2024&ndash;2026), WLRN, The Real Deal, FHFC, Shimberg Center, organization websites.</p>
+  </div>
+
+
+  <!-- =========================================
+       15 — DIFFERENTIATION
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">15 &mdash; Differentiation</span>
+    <h2>What Makes This Different</h2>
+
+    <table>
+      <thead><tr><th>Factor</th><th>Most Broward Programs</th><th>This Framework</th></tr></thead>
+      <tbody>
+        <tr><td>Affordability</td><td>Time-limited (15&ndash;30 yr covenants)</td><td>CLT = permanent. Land never returns to market.</td></tr>
+        <tr><td>Capital Source</td><td>Government grants, bonds</td><td>UHNW private capital + government incentives</td></tr>
+        <tr><td>Investor Return</td><td>None &mdash; grant-funded</td><td>14&ndash;18% after-tax IRR. Tax shelter.</td></tr>
+        <tr><td>Banking</td><td>Developer finds own financing</td><td>CRA mandate as institutional incentive</td></tr>
+        <tr><td>Scale</td><td>10&ndash;50 units/year (nonprofit typical)</td><td>77 &rarr; 90 &rarr; 320 across three projects</td></tr>
+        <tr><td>Land</td><td>Market-rate or waiting for surplus</td><td>$0 CRA conveyance ($10M+ value)</td></tr>
+        <tr><td>CLT Scale</td><td>SF CLT: 13 units in Broward</td><td>CLT at 25x with institutional backing</td></tr>
+        <tr><td>Proof</td><td>Plans, studies, workshops</td><td>Completed project. Loan repaid. Next two in pipeline.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">The Opportunity</span>
+      <p>Broward County has $154M in deployed gap financing, a $42M trust fund, $146M in bond authority, and a 30-year master plan. What it does not have is a developer with a completed project, an active pipeline, a negotiated site, an engaged architect, and a capital structure that attracts private investment at scale. That is the gap this framework fills.</p>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       16 — PIPELINE
+       ========================================= -->
+  <div class="section">
+    <span class="section-num">16 &mdash; Pipeline &amp; Market Context</span>
+    <h2>Major Projects 2025&ndash;2028</h2>
+
+    <table>
+      <thead><tr><th>Project</th><th>Developer</th><th class="num">Units</th><th>Type</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>The Era</td><td>Affiliated Development</td><td class="num">400</td><td>Workforce (80&ndash;120% AMI)</td><td>Under construction</td></tr>
+        <tr><td>Pinnacle at Cypress</td><td>Pinnacle Housing Group</td><td class="num">196</td><td>Senior + workforce</td><td>Groundbreaking Q1 2026</td></tr>
+        <tr><td>County gap-financed (8 sites)</td><td>Various</td><td class="num">516</td><td>Affordable rental</td><td>Proposed May 2025</td></tr>
+        <tr><td>Aspire 1650</td><td>BPHI</td><td class="num">90</td><td>Affordable &mdash; homeless (RFA 2025-103)</td><td>FHFC pipeline</td></tr>
+        <tr><td><strong>USPS-Alridge Station</strong></td><td><strong>BPHI</strong></td><td class="num"><strong>320</strong></td><td><strong>Affordable &mdash; 50%+ at 60% AMI (CLT + QOF)</strong></td><td><strong>Term sheet in negotiation</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- =========================================
+       17 — OPEN QUESTIONS
+       ========================================= -->
+  <div class="section section-break">
+    <span class="section-num">17 &mdash; Open Questions &amp; Next Steps</span>
+    <h2>Talking Points for Development</h2>
+
+    <div class="two-col">
+      <div>
+        <h4>Structure &amp; Legal</h4>
+        <p>Can a QOF and CLT be the same entity, or separate with ground lease? Limitations on returns in LIHTC + QOF combined structure? CLT covenant vs. Florida condo law? Single-asset vs. multi-asset fund?</p>
+        <h4>Government / Partnership</h4>
+        <p>Which CRAs expiring soonest with surplus parcels? County willingness for $1/year ground lease to CLT? Preference for 30-year LIHTC or permanent CLT covenant? Land disposition timeline?</p>
+      </div>
+      <div>
+        <h4>Investor Proposition</h4>
+        <p>Realistic 10-year IRR for QOF-backed CLT in Broward? FLP structure for estate planning + QOF? Minimum threshold for meaningful UHNW tax benefits? LIHTC syndicator selection strategy?</p>
+        <h4>Immediate Actions</h4>
+        <p>1. Pull BCPA Web Map (OZ + CRA overlay). 2. Contact Broward Housing Finance Division. 3. Request surplus land inventory (FL 166.0451). 4. Engage tax attorney (QOF + CLT). 5. Monitor OZ 2.0 (opens July 1, 2026). 6. Model financial scenarios.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       18 — BANKING PARTNERS
+       ========================================= -->
+  <div class="section">
+    <span class="section-num">18 &mdash; Target Banking Partners</span>
+    <h2>South Florida Capital Partners</h2>
+
+    <table>
+      <thead><tr><th>Institution</th><th>Why Relevant</th><th>Entry Point</th></tr></thead>
+      <tbody>
+        <tr><td>JPMorgan Private Bank</td><td>Largest private bank; aggressive CRA; active LIHTC syndicator</td><td>Explore Existing Relationship</td></tr>
+        <tr><td>Bank of America / Merrill</td><td>Major LIHTC investor/syndicator; strong CRA in South FL</td><td>BofA Community Development</td></tr>
+        <tr><td>Wells Fargo Private Bank</td><td>Significant CRA lending in Broward; affordable housing focus</td><td>Wells Fargo Housing Finance</td></tr>
+        <tr><td>Citi Private Bank</td><td>Global UHNW relationships; active in OZ and LIHTC</td><td>Citi Community Capital</td></tr>
+        <tr><td>TD Bank</td><td>Strong CRA in SE Florida; active construction lender</td><td>TD Community Dev Finance</td></tr>
+        <tr><td>Florida Community Loan Fund</td><td>CDFI &mdash; fills gaps; stacks with bank debt</td><td>Direct application</td></tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <p class="source" style="margin-top: 24px;">This document is prepared for discussion and partner outreach purposes only and does not represent the official position of any organization. All projections are preliminary and subject to legal, financial, and feasibility review. This is not legal or financial advice, and not a securities offering or investment solicitation. Data sourced from Broward County Property Appraiser, City of Fort Lauderdale CRA public records, Florida Housing Finance Corporation, HUD, IRS, Sun-Sentinel, WLRN, and publicly available government filings.</p>
+
+    <p style="font-family: var(--mono); font-size: 7.5pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-top: 16px; text-align: center;">Broward County Affordable Housing Initiative &mdash; Draft &mdash; March 2026 &mdash; Confidential</p>
+  </div>
+
+</body>
+</html>
