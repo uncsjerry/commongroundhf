@@ -8,16 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* WHY: Professional research document — think Goldman Sachs or McKinsey, not a website */
+    /* WHY: Professional research document for print — fixed dimensions, no viewport units */
     @page {
       size: letter;
-      margin: 0.9in 1in 1in 1in;
-      @bottom-center {
-        content: counter(page);
-        font-family: 'Inter', sans-serif;
-        font-size: 8pt;
-        color: #999;
-      }
+      margin: 0.75in 0.85in 0.85in 0.85in;
     }
 
     :root {
@@ -38,8 +32,8 @@
 
     body {
       font-family: var(--sans);
-      font-size: 10pt;
-      line-height: 1.6;
+      font-size: 9.5pt;
+      line-height: 1.55;
       color: var(--ink);
       background: var(--bg);
       -webkit-print-color-adjust: exact;
@@ -48,7 +42,7 @@
 
     /* --- Cover Page --- */
     .cover {
-      height: 100vh;
+      height: 9in;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -57,7 +51,7 @@
     }
 
     .cover-top {
-      padding-top: 2.5in;
+      padding-top: 2in;
     }
 
     .cover-rule {
@@ -129,9 +123,9 @@
 
     .toc h2 {
       font-family: var(--serif);
-      font-size: 18pt;
+      font-size: 16pt;
       font-weight: 600;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
       color: var(--ink);
     }
 
@@ -143,9 +137,9 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 8px 0;
+      padding: 5px 0;
       border-bottom: 1px dotted var(--rule-light);
-      font-size: 9.5pt;
+      font-size: 9pt;
       color: var(--ink-light);
     }
 
@@ -163,75 +157,86 @@
 
     .toc-section {
       font-family: var(--mono);
-      font-size: 7pt;
+      font-size: 6.5pt;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--accent);
-      padding: 16px 0 4px;
-      margin-top: 8px;
+      padding: 10px 0 2px;
+      margin-top: 4px;
       border-bottom: none;
       font-weight: 600;
     }
 
     /* --- Section Styling --- */
     .section {
-      margin-bottom: 36px;
+      margin-bottom: 24px;
     }
 
+    /* WHY: Only major topic transitions get forced page breaks — not every subsection */
     .section-break {
       page-break-before: always;
       padding-top: 0;
     }
 
+    /* WHY: Sections that should flow into previous content without a page break */
+    .section-continue {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+    }
+
     .section-num {
       font-family: var(--mono);
-      font-size: 7.5pt;
+      font-size: 7pt;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       display: block;
     }
 
     h2 {
       font-family: var(--serif);
-      font-size: 20pt;
+      font-size: 18pt;
       font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 12px;
+      line-height: 1.15;
+      margin-bottom: 8px;
       color: var(--ink);
       letter-spacing: -0.01em;
+      page-break-after: avoid;
     }
 
     h3 {
       font-family: var(--serif);
-      font-size: 13pt;
+      font-size: 12pt;
       font-weight: 600;
-      margin-top: 24px;
-      margin-bottom: 8px;
+      margin-top: 18px;
+      margin-bottom: 6px;
       color: var(--ink);
+      page-break-after: avoid;
     }
 
     h4 {
       font-family: var(--sans);
-      font-size: 10pt;
+      font-size: 9.5pt;
       font-weight: 600;
-      margin-top: 16px;
-      margin-bottom: 4px;
+      margin-top: 12px;
+      margin-bottom: 3px;
       color: var(--ink);
+      page-break-after: avoid;
     }
 
     p {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: var(--ink-light);
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
     .lead {
-      font-size: 11pt;
+      font-size: 10pt;
       color: var(--ink-light);
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.55;
+      margin-bottom: 14px;
       font-weight: 300;
     }
 
@@ -239,14 +244,15 @@
     .stats {
       display: flex;
       gap: 0;
-      margin: 20px 0;
+      margin: 14px 0;
       border-top: 2px solid var(--ink);
       border-bottom: 1px solid var(--rule);
+      page-break-inside: avoid;
     }
 
     .stat {
       flex: 1;
-      padding: 14px 16px 14px 0;
+      padding: 10px 12px 10px 0;
       border-right: 1px solid var(--rule-light);
     }
 
@@ -254,15 +260,15 @@
 
     .stat-val {
       font-family: var(--serif);
-      font-size: 22pt;
+      font-size: 18pt;
       font-weight: 700;
       color: var(--ink);
       line-height: 1;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .stat-label {
-      font-size: 7.5pt;
+      font-size: 7pt;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -273,30 +279,30 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0 20px;
-      font-size: 9pt;
+      margin: 10px 0 14px;
+      font-size: 8.5pt;
       page-break-inside: avoid;
     }
 
     thead th {
       font-family: var(--sans);
-      font-size: 7.5pt;
+      font-size: 7pt;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--muted);
       text-align: left;
-      padding: 8px 10px;
+      padding: 5px 8px;
       border-bottom: 2px solid var(--ink);
       white-space: nowrap;
     }
 
     tbody td {
-      padding: 8px 10px;
+      padding: 5px 8px;
       border-bottom: 1px solid var(--rule-light);
       color: var(--ink-light);
       vertical-align: top;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     tbody td:first-child {
@@ -321,29 +327,29 @@
     /* --- Callout Box --- */
     .callout {
       border-left: 3px solid var(--accent);
-      padding: 14px 18px;
-      margin: 16px 0;
+      padding: 10px 14px;
+      margin: 12px 0;
       background: var(--accent-light);
       page-break-inside: avoid;
     }
 
     .callout-label {
       font-family: var(--mono);
-      font-size: 7pt;
+      font-size: 6.5pt;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       display: block;
       font-weight: 600;
     }
 
     .callout p {
       font-family: var(--serif);
-      font-size: 10.5pt;
+      font-size: 9.5pt;
       font-style: italic;
       color: var(--ink);
-      line-height: 1.55;
+      line-height: 1.45;
       margin-bottom: 0;
     }
 
@@ -351,20 +357,22 @@
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin: 16px 0;
+      gap: 20px;
+      margin: 10px 0;
+      page-break-inside: avoid;
     }
 
     /* --- Timeline --- */
     .timeline {
-      margin: 16px 0 20px;
+      margin: 10px 0 14px;
+      page-break-inside: avoid;
     }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 16px;
-      padding: 10px 0;
+      grid-template-columns: 50px 1fr;
+      gap: 12px;
+      padding: 6px 0;
       border-bottom: 1px solid var(--rule-light);
     }
 
@@ -408,13 +416,14 @@
 
     /* --- Image --- */
     .fig {
-      margin: 20px 0;
+      margin: 14px 0;
       page-break-inside: avoid;
     }
 
     .fig img {
       width: 100%;
-      height: auto;
+      max-height: 3.5in;
+      object-fit: contain;
       display: block;
       border: 1px solid var(--rule-light);
     }
@@ -452,9 +461,9 @@
     .flow-item {
       counter-increment: flow;
       display: grid;
-      grid-template-columns: 32px 1fr;
-      gap: 12px;
-      padding: 8px 0;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      padding: 5px 0;
       border-bottom: 1px solid var(--rule-light);
     }
 
@@ -466,8 +475,8 @@
       padding-top: 2px;
     }
 
-    .flow-item h4 { margin-top: 0; font-size: 9.5pt; }
-    .flow-item p { font-size: 9pt; margin-bottom: 0; }
+    .flow-item h4 { margin-top: 0; font-size: 8.5pt; }
+    .flow-item p { font-size: 8pt; margin-bottom: 0; }
 
     /* --- Return Cards --- */
     .return-row {
@@ -566,7 +575,7 @@
        ========================================= -->
   <div class="section section-break">
     <span class="section-num">01 &mdash; Executive Summary</span>
-    <h2>The Opportunity Is Structural</h2>
+    <h2>The Wealth Is in the Land</h2>
     <p class="lead">Broward County faces one of the most acute housing affordability crises in the United States. A convergence of expiring CRA districts, incoming Opportunity Zone 2.0 designations, and $85M+ in redirected TIF funding creates a rare window for a transformative public-private housing program.</p>
 
     <div class="stats">
@@ -639,7 +648,7 @@
 
     <div class="callout">
       <span class="callout-label">Why Legacy Matters</span>
-      <p>Wayne Huizenga didn't just write a check. He challenged an industry to invest in a solution alongside government. This framework extends that legacy to UHNW family offices: not charity, but architecture. A capital structure where the land appreciates on your family's balance sheet for generations while permanently housing the workforce that makes your community function. A namesake that does good in perpetuity.</p>
+      <p>Wayne Huizenga didn't just write a check. He challenged an industry to invest in a solution alongside government. This framework extends that legacy to UHNW family offices: not charity, but architecture. You don't get wealthy without real estate &mdash; and this is real estate that compounds. Land that appreciates on your family's balance sheet for generations. In the current economic climate, with markets volatile and paper assets uncertain, permanently appreciating land is the smartest play available. A namesake that does good in perpetuity.</p>
     </div>
 
     <p class="source">Sources: Sun-Sentinel (2014, 2018, 2024), BPHI.org, Leo Goodwin Foundation, Broward County Commission records (December 1993), CNBC, ESPN, Nova Southeastern University, Automotive Hall of Fame.</p>
@@ -671,7 +680,7 @@
   <!-- =========================================
        04 — CAPITAL STACK
        ========================================= -->
-  <div class="section section-break">
+  <div class="section">
     <span class="section-num">04 &mdash; The Program Framework</span>
     <h2>The Capital Stack &mdash; Five Layers</h2>
     <p class="lead">An integrated capital stack where multiple funding sources layer on top of each other, maximizing both the scale of housing produced and the financial return for private investors.</p>
@@ -711,7 +720,7 @@
 
     <div class="callout">
       <span class="callout-label">Key Insight</span>
-      <p>The land itself &mdash; held by the family office entity or CLT &mdash; appreciates over time as a balance sheet asset, independent of the affordable housing restriction on the units. This is the generational wealth mechanism.</p>
+      <p>There is rich and there is wealthy. Income makes you rich. Land makes you wealthy. The land itself &mdash; held by the family office entity or CLT &mdash; appreciates over time as a balance sheet asset, independent of the affordable housing restriction on the units. You don't get wealthy without real estate. This program puts permanently appreciating land on your family's balance sheet while housing the workforce that makes your community function.</p>
     </div>
   </div>
 
@@ -816,29 +825,27 @@
   <!-- =========================================
        10 — PROOF OF CONCEPT
        ========================================= -->
-  <div class="section section-break">
+  <div class="section">
     <span class="section-num">10 &mdash; Proof of Concept</span>
-    <h2>Seven on Seventh &amp; Aspire 1650</h2>
-
-    <div class="fig">
-      <img src="assets/seven-on-seventh.jpg" alt="Seven on Seventh">
-      <p class="fig-caption">Seven on Seventh &mdash; 72 units &mdash; Adjacent to Huizenga Campus &mdash; Completed 2023 &mdash; Image: bphi.org</p>
-    </div>
+    <h2>Execution Track Record</h2>
 
     <div class="two-col">
       <div>
-        <h4>Seven on Seventh &mdash; Completed</h4>
-        <p>77-unit mixed-use affordable housing in the NW-Progresso CRA. 95%+ stabilized occupancy achieved. Construction financing fully repaid. CRA partnership executed. Workforce training hub operational. Demonstrates the model works in this exact market.</p>
+        <div class="fig" style="margin-top: 0;">
+          <img src="assets/seven-on-seventh.jpg" alt="Seven on Seventh" style="max-height: 2in;">
+          <p class="fig-caption">Seven on Seventh &mdash; Completed 2023 &mdash; bphi.org</p>
+        </div>
+        <h4>Seven on Seventh &mdash; 77 Units (Completed)</h4>
+        <p>Mixed-use affordable housing in the NW-Progresso CRA. 95%+ stabilized occupancy. Construction loan repaid. CRA partnership executed. Workforce training hub operational.</p>
       </div>
       <div>
-        <h4>Aspire 1650 &mdash; In Pipeline</h4>
-        <p>BPHI's second development in Pompano Beach. In the FHFC pipeline under RFA 2025-103 (Housing Credit and SAIL Financing to Develop Housing for Homeless Persons). 90 units Phase 1 of 160 total. Construction targeted 2026&ndash;2027. Architect: Gallo Herbert Architects.</p>
+        <div class="fig" style="margin-top: 0;">
+          <img src="assets/aspire-1650.png" alt="Aspire 1650" style="max-height: 2in;">
+          <p class="fig-caption">Aspire 1650 &mdash; GHA &mdash; Schematic Design May 2025</p>
+        </div>
+        <h4>Aspire 1650 &mdash; 90 Units (In Pipeline)</h4>
+        <p>Pompano Beach. FHFC RFA 2025-103 approved March 2025. GC bids due April 2, 2026. Construction Q3 2026&ndash;Q4 2027. Phase 1 of 160 total.</p>
       </div>
-    </div>
-
-    <div class="fig">
-      <img src="assets/aspire-1650.png" alt="Aspire 1650">
-      <p class="fig-caption">Aspire 1650 &mdash; 160 units (Phase 1: 90) &mdash; NW 31st Ave &amp; Blount Rd, Pompano Beach &mdash; Gallo Herbert Architects &mdash; May 2025</p>
     </div>
   </div>
 
@@ -884,11 +891,6 @@
           </tbody>
         </table>
       </div>
-    </div>
-
-    <div class="fig">
-      <img src="assets/aspire-1650.png" alt="Aspire 1650 Architectural Renders">
-      <p class="fig-caption">Aspire 1650 &mdash; 160 units (Phase 1: 90) &mdash; Gallo Herbert Architects &mdash; Schematic Design May 2025</p>
     </div>
 
     <h3>Development Budget &mdash; FHFC Application</h3>
@@ -1123,7 +1125,7 @@
   <!-- =========================================
        15 — DIFFERENTIATION
        ========================================= -->
-  <div class="section section-break">
+  <div class="section">
     <span class="section-num">15 &mdash; Differentiation</span>
     <h2>What Makes This Different</h2>
 
@@ -1171,7 +1173,7 @@
   <!-- =========================================
        17 — OPEN QUESTIONS
        ========================================= -->
-  <div class="section section-break">
+  <div class="section">
     <span class="section-num">17 &mdash; Open Questions &amp; Next Steps</span>
     <h2>Talking Points for Development</h2>
 
