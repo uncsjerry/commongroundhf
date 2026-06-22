@@ -86,23 +86,63 @@ The initiative uses a layered capital stack:
 - $38M+ in Special Member Projects (general revenue) — precedent exists
 - Property tax reform (2026 special session) could affect local housing funding
 
-### Live Local Act (F.S. §166.04151 / §125.01055)
-- Florida's landmark workforce housing legislation, signed 2023, expanded 2024
-- Gives **priority development status to government entities, hospitals, and school districts** for future use of publicly owned land for affordable housing
-- As of mid-2026, Broward County **school board and hospital districts are actively moving forward** with affordable housing projects on their land, leveraging Live Local Act priority provisions
-- Key provisions: local zoning/density preemption for affordable projects, ad valorem tax exemptions, FHFC funding priority
-- This is a significant tailwind for BPHI's model: public land conveyance + CLT structure aligns directly with Live Local's priority framework for government-owned sites like Heritage Crossing
-- The school board and hospital district activity creates potential partnership opportunities and validates the public-land-to-affordable-housing pipeline that BPHI is building
+### HB 1389 — Live Local Act Expansion (Effective July 1, 2026)
+- Passed near-unanimously: House 98-4, Senate 35-0
+- **Government land preemption**: Live Local now applies to ALL land owned by a city, county, or school board — not just commercial/industrial/mixed-use zoned parcels (F.S. §§125.01055(7) & 166.04151(7))
+- **100% ad valorem tax exemption** for multifamily projects up to 120% AMI on government ground leases (F.S. §196.19782) — massive incentive for public-land housing
+- **Religious institution land** also eligible (3+ acres, house of worship operating 10+ years; must be co-applicant)
+- **Fair Housing expansion**: Discrimination based on "source of financing" or because a project is affordable housing is now explicitly prohibited under Ch. 760 F.S. Sovereign immunity waived for violations.
+- Government entity must serve as co-applicant on projects using public land
+- Preemptions do NOT apply in areas of critical state concern, conservation easements, or land regulations intended to preserve open character
+
+### Broward County School Board — Surplus School Land for Housing
+- Broward County Public Schools has 50,000+ empty seats across ~300 schools, with a $94M budget hole from losing 10,000 students in one year
+- Six schools closed January 2026 (Phase 2 of "Redefining Broward County Public Schools"): North Fork Elementary, Sunshine Elementary (Miramar), Panther Run Elementary, Palm Cove Elementary (Pembroke Pines), Plantation Middle, Seagull Alternative High (Fort Lauderdale)
+- **North Fork Elementary** — Two competing proposals include "Sistrunk Rising" (job training for high school students + national hotel brand + affordable housing for school staff). Located in the NW 7th Ave corridor, same area as Heritage Crossing.
+- Seagull Alternative High — proposed as police/fire training facility
+- Panther Run, Plantation Middle, Sunshine Elementary — converting to district office space
+- Superintendent Hepburn projects enrollment losses of 25,000+ students over five years — more closures coming in Phase 3
+- As of July 1, 2026, HB 1389 explicitly extends Live Local Act zoning/density preemptions to school board-owned land
+
+### Fort Lauderdale City Commission — Pro-Housing Signals
+- February 2026: Joint workshop with Affordable Housing Advisory Committee discussed use of City-owned land for affordable housing, Affordable Housing Master Plan, ADU policy, and impact fee waivers for affordable developments
+- June 16, 2026: Heritage Crossing / Alridge Post Office site on conference agenda (CAM #26-0409) — §8.02 conveyance-to-CRA pathway for affordable housing is one of four published options
+- City HCD Division administers $10-12M annually in federal/state housing funds
+- The city's Affordable Housing Incentive program is actively promoting density bonuses and fee waivers
+
+### Broward County Construction Surge (May 2026 Data)
+- 9,856 units under construction in the Fort Lauderdale market area (7.6% addition to current inventory)
+- 43% are affordable or partially affordable (4,198 units): 1,014 in fully affordable buildings, 3,184 in partially affordable buildings
+- Geographic distribution: Fort Lauderdale-Central (3,313 units), Davie (1,489), Hollywood (1,272)
+- Key projects: Douglas Garden Residences (410 units, Pembroke Pines), The Arcadian (502 units, Fort Lauderdale), Pine Island Park (120 units, Sunrise), The Era (400 units workforce housing, downtown Fort Lauderdale)
+- Broward County Housing Authority investing $49M into three new developments
+- Housing shortfall in Broward exceeds 140,000 affordable units
+
+### Hospital Districts
+- Broward Health referenced as a major job center near new workforce housing (The Era — 400 units downtown)
+- HB 1389 does not explicitly name hospital districts in preemption language — covers cities, counties, and school boards
+- Hospital districts would likely need to work through county conveyance or joint venture
+- Potential partnership model: hospital-owned surplus land conveyed to county, then developed under Live Local preemptions
+
+### Key Dates (as of June 2026)
+- June 26, 2026: FHFC Board — Aspire 1650 waiver petition on consent agenda with positive staff recommendation
+- June 26, 2026: Broward Housing Council meeting — Govt Center East, Room 430, 10am
+- July 1, 2026: HB 1389 takes effect — Live Local Act expansion to school board land, tax exemptions, fair housing protections
+- Ongoing: School Board "Redefining" Phase 3 — more closures and repurposing decisions expected
+- March 2 – April 30, 2027: Florida legislative session — potential BPHI Special Member Project ask
 
 ### Key People & Organizations
-- BPHI (Broward Partnership for the Homeless, Inc.) — nonprofit operator
+- BPHI (Broward Partnership for the Homeless, Inc.) — nonprofit operator of Huizenga Campus
 - Green Mills Group — developer (Aspire 1650)
-- Glavovic Inc. — architect
+- Glavovic Inc. — architect (Aspire 1650 + Heritage Crossing concepts)
 - FHFC (Florida Housing Finance Corporation) — state housing finance agency
-- Fort Lauderdale CRA — local redevelopment authority
+- Fort Lauderdale CRA — local redevelopment authority (NW-Progresso-Flagler Heights + Central City)
+- Fort Lauderdale Housing Authority (HACFL) — public housing and Section 8
 - HUD — federal housing programs and CDBG oversight
-- Broward County School Board — moving forward with affordable housing on school district land (Live Local Act)
-- North/South Broward Hospital Districts — exploring affordable housing on hospital-owned parcels (Live Local Act)
+- Broward County Housing Authority (BCHA) — $49M in new developments
+- Broward Housing Council (BHC) — advisory to County Commission since 2009
+- Broward County School Board / Superintendent Hepburn — surplus school land repurposing
+- North/South Broward Hospital Districts (Broward Health) — potential partnership on surplus land
 
 ## Response Guidelines
 - Be direct and specific. Lead with the answer.
