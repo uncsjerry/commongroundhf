@@ -1,0 +1,19 @@
+[build]
+  # WHY: No build command — this is a static site. Setting it explicitly
+  # prevents Netlify from trying to auto-detect and process asset files.
+  command = "echo 'Static site — no build needed'"
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# WHY: Redirect /api/* to serverless functions so the chat UI
+# can call /api/housing-chat instead of /.netlify/functions/housing-chat
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# WHY: SPA-style fallback not needed — this is a static site with
+# explicit HTML pages. 404s should stay 404s.

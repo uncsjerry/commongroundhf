@@ -1,0 +1,3 @@
+# WHY: Netlify's build stage chokes on filenames with spaces and special
+# characters in .docx files. These are downloadable assets, not build inputs.
+# Ignoring them during build still serves them from the publish directory.
