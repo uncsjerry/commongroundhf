@@ -1,4 +1,7 @@
 [build]
+  # WHY: No build command — this is a static site. Setting it explicitly
+  # prevents Netlify from trying to auto-detect and process asset files.
+  command = "echo 'Static site — no build needed'"
   publish = "."
   functions = "netlify/functions"
 
