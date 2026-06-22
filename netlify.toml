@@ -1,9 +1,10 @@
 [build]
-  # WHY: No build command — this is a static site. Setting it explicitly
-  # prevents Netlify from trying to auto-detect and process asset files.
-  command = "echo 'Static site — no build needed'"
+  # WHY: No build command — this is a purely static site.
+  # ignore sets Netlify to skip asset processing on files with special characters.
+  command = ""
   publish = "."
   functions = "netlify/functions"
+  ignore = "/dev/null"
 
 [functions]
   node_bundler = "esbuild"

@@ -3,3 +3,7 @@ node_modules/
 *.swp
 .netlify/
 .env
+# WHY: Office docs with spaces/special chars break Netlify builds.
+# Keep source docs on local disk or in Google Drive, not in the repo.
+*.docx
+*.xlsx
