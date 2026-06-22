@@ -85,7 +85,14 @@ The initiative uses a layered capital stack:
 - Sadowski Trust Fund fully funded for FY2026/27
 - $38M+ in Special Member Projects (general revenue) — precedent exists
 - Property tax reform (2026 special session) could affect local housing funding
-- Live Local Act: Florida's landmark workforce housing legislation
+
+### Live Local Act (F.S. §166.04151 / §125.01055)
+- Florida's landmark workforce housing legislation, signed 2023, expanded 2024
+- Gives **priority development status to government entities, hospitals, and school districts** for future use of publicly owned land for affordable housing
+- As of mid-2026, Broward County **school board and hospital districts are actively moving forward** with affordable housing projects on their land, leveraging Live Local Act priority provisions
+- Key provisions: local zoning/density preemption for affordable projects, ad valorem tax exemptions, FHFC funding priority
+- This is a significant tailwind for BPHI's model: public land conveyance + CLT structure aligns directly with Live Local's priority framework for government-owned sites like Heritage Crossing
+- The school board and hospital district activity creates potential partnership opportunities and validates the public-land-to-affordable-housing pipeline that BPHI is building
 
 ### Key People & Organizations
 - BPHI (Broward Partnership for the Homeless, Inc.) — nonprofit operator
@@ -94,6 +101,8 @@ The initiative uses a layered capital stack:
 - FHFC (Florida Housing Finance Corporation) — state housing finance agency
 - Fort Lauderdale CRA — local redevelopment authority
 - HUD — federal housing programs and CDBG oversight
+- Broward County School Board — moving forward with affordable housing on school district land (Live Local Act)
+- North/South Broward Hospital Districts — exploring affordable housing on hospital-owned parcels (Live Local Act)
 
 ## Response Guidelines
 - Be direct and specific. Lead with the answer.
