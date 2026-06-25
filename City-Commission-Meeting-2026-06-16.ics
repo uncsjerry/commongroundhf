@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Claude//Cowork//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ftl-commission-cam26-0409-20260616@commongroundht
+DTSTAMP:20260612T180000Z
+DTSTART;TZID=America/New_York:20260616T130000
+DTEND;TZID=America/New_York:20260616T153000
+SUMMARY:City Commission Conference Mtg — Alridge Post Office Site (CAM #26-0409)
+LOCATION:City Hall "101 Building"\, 100 N. Andrews Avenue\, 11th Floor Conference Room\, Fort Lauderdale\, FL
+DESCRIPTION:Fort Lauderdale City Commission Conference Meeting — Consideration of the Future Use of the USPS Alridge Station Post Office site\, 400 NW 7th Avenue (CAM #26-0409\, District 2).\n\nTime: Fran (BPHI) says 1:00 PM\; City's posted Conference Meeting start is 1:30 PM — arriving at 1:00 covers both.\n\nWhy it matters: City weighing options incl. conveyance to CRA/Housing Authority for affordable housing (≤80% AMI)\, surplus sale (May 2026 appraisal: $13.5M)\, or RFP under F.S. 255.065. This is the Heritage Crossing site.\n\nWho: Dodie + Margi Nothard attending for the Partnership. Fran and Debbie cannot attend.\n\nBefore the meeting: call/email Mayor Trantalis (954-828-5314\, dtrantalis@fortlauderdale.gov) re: BPHI interest + federal funding experience (Dodie's ask via Fran\, 6/12). Debbie calling Herbst\; Dodie calling Sorensen and Glassman.\n\nMaterials: Commission Agenda Memo 26-0409 + USPS Site Presentation (attached to Fran's 6/12 email).
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Commission meeting in 1 hour — head to 100 N. Andrews Ave
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
